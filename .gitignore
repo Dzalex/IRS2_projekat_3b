@@ -18,3 +18,4 @@ local.properties
 *.list
 *.elf
 makefile
+*.launch
