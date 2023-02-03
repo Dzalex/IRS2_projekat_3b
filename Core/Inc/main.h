@@ -60,6 +60,10 @@ void Error_Handler(void);
 #define OLED_I2C hi2c2
 #define B1_Pin GPIO_PIN_13
 #define B1_GPIO_Port GPIOC
+#define ADC1_POT0_Pin GPIO_PIN_0
+#define ADC1_POT0_GPIO_Port GPIOA
+#define ADC1_POT1_Pin GPIO_PIN_1
+#define ADC1_POT1_GPIO_Port GPIOA
 #define USART_TX_Pin GPIO_PIN_2
 #define USART_TX_GPIO_Port GPIOA
 #define USART_RX_Pin GPIO_PIN_3
