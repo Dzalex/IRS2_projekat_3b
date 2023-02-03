@@ -1,0 +1,3 @@
+[submodule "Drivers/stm32-ssd1306"]
+	path = Drivers/stm32-ssd1306
+	url = https://github.com/afiskon/stm32-ssd1306.git
