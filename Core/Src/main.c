@@ -106,7 +106,7 @@ int main(void)
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim17);
-
+  Init_Generator();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -172,9 +172,9 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void Init_Generator()
 {
-	g_Generator_parameters.waveform = SIN;
+	Set_Generator_Mode(SIN);
 	g_Generator_parameters.amplitude = 0xFFF;
-	g_Generator_parameters.frequency = 1000;
+	Set_Generator_Frequency(1);
 	//TODO: Call all other functions
 
 }
@@ -188,9 +188,6 @@ void Set_Generator_Frequency(uint16_t frequency)
 
 void Set_Generator_Mode(enum generator_waveform waveform)
 {
-	if (waveform == g_Generator_parameters.waveform)
-		return;
-
 	HAL_TIM_Base_Stop(&htim6);
 	HAL_DAC_Stop_DMA(&hdac1, DAC_CHANNEL_1);
 
