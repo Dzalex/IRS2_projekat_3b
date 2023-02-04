@@ -34,7 +34,12 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+struct generator_params {
+	uint16_t amplitude;
+	uint16_t frequency;
+	enum generator_waveform waveform;
+};
+struct generator_params g_Generator_parameters;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/

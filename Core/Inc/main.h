@@ -32,17 +32,19 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "ssd1306_conf.h"
+#include "stdint.h"
 
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-
+enum generator_waveform {SIN, TRIANGE, SQARE};
+struct generator_params;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-
+extern struct generator_params g_Generator_parameters;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/
@@ -54,6 +56,10 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
+void Init_Generator();
+void Set_Generator_Amplitude(uint16_t amplitude);
+void Set_Generator_Frequency(uint16_t frequency);
+void Set_Generator_Mode(enum generator_waveform waveform);
 
 /* USER CODE END EFP */
 
