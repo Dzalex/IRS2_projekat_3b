@@ -106,8 +106,7 @@ int main(void)
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim17);
-  HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_1, (uint32_t*)sinewave, 1000, DAC_ALIGN_12B_R);
-  HAL_TIM_Base_Start(&htim6);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -185,6 +184,31 @@ void Set_Generator_Frequency(uint16_t frequency)
 	g_Generator_parameters.frequency = frequency;
 	uint16_t new_counter_period = FREQ_TO_COUNT_RATIO/frequency;
 	__HAL_TIM_SET_AUTORELOAD(&htim6, new_counter_period);
+}
+
+void Set_Generator_Mode(enum generator_waveform waveform)
+{
+	if (waveform == g_Generator_parameters.waveform)
+		return;
+
+	HAL_TIM_Base_Stop(&htim6);
+	HAL_DAC_Stop_DMA(&hdac1, DAC_CHANNEL_1);
+
+	g_Generator_parameters.waveform = waveform;
+
+	switch (waveform)
+	{
+	case SIN:
+		HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_1, (uint32_t*)sinewave, 1000, DAC_ALIGN_12B_R);
+		break;
+	case TRIANGE:
+		HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_1, (uint32_t*)triangle, 1000, DAC_ALIGN_12B_R);
+		break;
+	case SQUARE:
+		HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_1, (uint32_t*)square_table, 1000, DAC_ALIGN_12B_R);
+	}
+
+	HAL_TIM_Base_Start(&htim6);
 }
 /* USER CODE END 4 */
 
