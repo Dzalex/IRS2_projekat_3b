@@ -17,6 +17,7 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <lookup_table.h>
 #include "main.h"
 #include "adc.h"
 #include "dac.h"
@@ -29,7 +30,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "ssd1306.h"
-#include "sine_lookup_table.h"
 
 /* USER CODE END Includes */
 
