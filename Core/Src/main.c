@@ -55,7 +55,7 @@ struct generator_params g_Generator_parameters;
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+const uint16_t FREQ_TO_COUNT_RATIO = 8000;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -177,6 +177,14 @@ void Init_Generator()
 	g_Generator_parameters.amplitude = 0xFFF;
 	g_Generator_parameters.frequency = 1000;
 	//TODO: Call all other functions
+
+}
+
+void Set_Generator_Frequency(uint16_t frequency)
+{
+	g_Generator_parameters.frequency = frequency;
+	uint16_t new_counter_period = FREQ_TO_COUNT_RATIO/frequency;
+	__HAL_TIM_SET_AUTORELOAD(&htim6, new_counter_period);
 }
 /* USER CODE END 4 */
 

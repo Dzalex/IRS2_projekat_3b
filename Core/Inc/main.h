@@ -45,6 +45,7 @@ struct generator_params;
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
 extern struct generator_params g_Generator_parameters;
+extern const uint16_t FREQ_TO_COUNT_RATIO;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/
