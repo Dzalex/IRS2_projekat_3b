@@ -167,7 +167,13 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void Init_Generator()
+{
+	g_Generator_parameters.waveform = SIN;
+	g_Generator_parameters.amplitude = 0xFFF;
+	g_Generator_parameters.frequency = 1000;
+	//TODO: Call all other functions
+}
 /* USER CODE END 4 */
 
 /**
