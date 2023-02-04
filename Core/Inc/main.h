@@ -38,7 +38,7 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-enum generator_waveform {SIN, TRIANGE, SQARE};
+enum generator_waveform {SIN, TRIANGE, SQUARE};
 struct generator_params;
 /* USER CODE END ET */
 
