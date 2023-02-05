@@ -172,7 +172,11 @@ uint32_t MAP(uint32_t au32_IN, uint32_t au32_INmin, uint32_t au32_INmax, uint32_
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
 {
 	uint32_t adc_value = HAL_ADC_GetValue(&hadc1);
-	uint32_t new_frequency = MAP(adc_value, 20, 3300, 1, 8000);
+	uint32_t new_frequency = 1;
+	if (adc_value > 20 && adc_value < 8000){
+		new_frequency = MAP(adc_value, 20, 3300, 1, 8000);
+	}
+
 	Set_Generator_Frequency((uint16_t)new_frequency);
 }
 /* USER CODE END 1 */
