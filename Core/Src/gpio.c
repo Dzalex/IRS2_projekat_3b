@@ -79,5 +79,15 @@ void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 2 */
-
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	if (GPIO_Pin == SW2_Pin)
+	{
+		Generator_Next_Mode();
+	}
+	else if (GPIO_Pin == SW1_Pin)
+	{
+		Set_Previous_Mode();
+	}
+}
 /* USER CODE END 2 */
