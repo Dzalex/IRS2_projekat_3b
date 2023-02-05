@@ -38,7 +38,7 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-enum generator_waveform {SIN, TRIANGE, SQUARE};
+enum generator_waveform {SIN=0, TRIANGE=1, SQUARE=2};
 struct generator_params;
 /* USER CODE END ET */
 
@@ -61,6 +61,9 @@ void Init_Generator();
 void Set_Generator_Amplitude(uint16_t amplitude);
 void Set_Generator_Frequency(uint16_t frequency);
 void Set_Generator_Mode(enum generator_waveform waveform);
+
+void Generator_Next_Mode();
+void Set_Previous_Mode();
 
 /* USER CODE END EFP */
 

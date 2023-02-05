@@ -207,6 +207,30 @@ void Set_Generator_Mode(enum generator_waveform waveform)
 
 	HAL_TIM_Base_Start(&htim6);
 }
+
+void Generator_Next_Mode()
+{
+	enum generator_waveform new_waveform = g_Generator_parameters.waveform + 1;
+	if (new_waveform > SQUARE)
+			new_waveform = SIN;
+
+	Set_Generator_Mode(new_waveform);
+}
+
+void Set_Previous_Mode()
+{
+	enum generator_waveform new_waveform = g_Generator_parameters.waveform;
+	if (new_waveform != SIN)
+	{
+		new_waveform--;
+	}
+	else
+	{
+		new_waveform = SQUARE;
+	}
+
+	Set_Generator_Mode(new_waveform);
+}
 /* USER CODE END 4 */
 
 /**
