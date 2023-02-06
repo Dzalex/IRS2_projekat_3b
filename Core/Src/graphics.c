@@ -55,6 +55,7 @@ void Update_Frequency()
 void Update_Waveform()
 {
 	Current_Generator_parameters.waveform = g_Generator_parameters.waveform;
+	ssd1306_FillRectangle(67, 0, 128, 64, White);
 
 	switch (Current_Generator_parameters.waveform)
 	{
