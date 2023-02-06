@@ -30,6 +30,7 @@
 /* USER CODE BEGIN Includes */
 #include "ssd1306.h"
 #include "lookup_table.h"
+#include "graphics.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -110,6 +111,7 @@ int main(void)
   HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
   HAL_ADC_Start_IT(&hadc1);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+  Init_Graphics();
   /* USER CODE END 2 */
 
   /* Infinite loop */
