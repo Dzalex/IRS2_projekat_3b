@@ -9,6 +9,9 @@
 #include "main.h"
 #include "ssd1306.h"
 
+#define WAVEFORM_X 66
+#define WAVEFORM_Y 0
+
 void Init_Graphics()
 {
 	ssd1306_Init();
@@ -21,4 +24,19 @@ void Init_Graphics()
 
 
 	ssd1306_UpdateScreen();
+}
+
+void Update_Graphics()
+{
+	;
+}
+
+void Update_Frequency()
+{
+	;
+}
+
+void Update_Waveform()
+{
+	;
 }

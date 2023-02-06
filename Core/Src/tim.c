@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "tim.h"
+#include "graphics.h"
 
 /* USER CODE BEGIN 0 */
 
@@ -321,11 +322,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
 }
 
-HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
+void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	if (htim == &htim1)
+	if (htim == &htim1 && __HAL_TIM_GET_FLAG(htim, TIM_FLAG_CC2) != RESET)
 	{
-
+		Update_Graphics();
 	}
 }
 /* USER CODE END 1 */

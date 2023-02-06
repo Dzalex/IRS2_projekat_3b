@@ -9,5 +9,8 @@
 #define INC_GRAPHICS_H_
 
 void Init_Graphics();
+void Update_Graphics();
+void Update_Frequency();
+void Update_Waveform();
 
 #endif /* INC_GRAPHICS_H_ */
