@@ -61,4 +61,29 @@ void Draw_Sin()
 	ssd1306_DrawArc(82, 32, 15, 90, 270, Black);
 	ssd1306_DrawArc(111, 32, 15, 270, 360+90, Black);
 }
+
+void Draw_Triangle()
+{
+	SSD1306_VERTEX triangle_vertex[] =
+	  {
+	      {67,32},
+	      {87,2},
+	      {112,62},
+	      {127,32}
+	  };
+	ssd1306_Polyline(triangle_vertex, sizeof(triangle_vertex)/sizeof(triangle_vertex[0]), Black);
+}
+
+void Draw_Square()
+{
+	SSD1306_VERTEX square_vertex[] =
+		  {
+		      {67,32},
+		      {67,2},
+		      {97,2},
+		      {97,62},
+			  {125,62},
+			  {125,32}
+		  };
+		ssd1306_Polyline(square_vertex, sizeof(square_vertex)/sizeof(square_vertex[0]), Black);
 }

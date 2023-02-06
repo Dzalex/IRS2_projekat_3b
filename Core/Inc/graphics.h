@@ -17,5 +17,7 @@ void Update_Graphics();
 void Update_Frequency();
 void Update_Waveform();
 void Draw_Sin();
+void Draw_Triangle();
+void Draw_Square();
 
 #endif /* INC_GRAPHICS_H_ */
