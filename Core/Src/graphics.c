@@ -12,6 +12,8 @@
 #define WAVEFORM_X 66
 #define WAVEFORM_Y 0
 
+struct generator_params Current_Generator_parameters;
+
 void Init_Graphics()
 {
 	ssd1306_Init();
@@ -22,21 +24,34 @@ void Init_Graphics()
 	ssd1306_SetCursor(2, 18);
 	ssd1306_WriteString("9999Hz ", Font_11x18, Black);
 
-
 	ssd1306_UpdateScreen();
+
+	Current_Generator_parameters = g_Generator_parameters;
 }
 
 void Update_Graphics()
 {
-	;
+	if (Current_Generator_parameters.frequency != g_Generator_parameters.frequency)
+	{
+		Update_Frequency();
+	}
+
+	if (Current_Generator_parameters.waveform != g_Generator_parameters.waveform)
+	{
+		Update_Waveform();
+	}
+
+	ssd1306_UpdateScreen();
 }
 
 void Update_Frequency()
 {
-	;
+
+	Current_Generator_parameters.frequency = g_Generator_parameters.frequency
 }
 
 void Update_Waveform()
 {
-	;
+
+	Current_Generator_parameters.waveform = g_Generator_parameters.waveform
 }

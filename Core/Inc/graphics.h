@@ -8,6 +8,10 @@
 #ifndef INC_GRAPHICS_H_
 #define INC_GRAPHICS_H_
 
+#include "main.h"
+
+extern struct generator_params g_Generator_parameters;
+
 void Init_Graphics();
 void Update_Graphics();
 void Update_Frequency();
