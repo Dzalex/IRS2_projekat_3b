@@ -24,6 +24,8 @@ void Init_Graphics()
 	ssd1306_SetCursor(2, 18);
 	ssd1306_WriteString("9999Hz ", Font_11x18, Black);
 
+	Draw_Sin();
+
 	ssd1306_UpdateScreen();
 
 	Current_Generator_parameters = g_Generator_parameters;
@@ -54,4 +56,9 @@ void Update_Waveform()
 {
 
 	Current_Generator_parameters.waveform = g_Generator_parameters.waveform
+void Draw_Sin()
+{
+	ssd1306_DrawArc(82, 32, 15, 90, 270, Black);
+	ssd1306_DrawArc(111, 32, 15, 270, 360+90, Black);
+}
 }
