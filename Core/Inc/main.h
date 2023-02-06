@@ -39,13 +39,20 @@ extern "C" {
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
 enum generator_waveform {SIN=0, TRIANGE=1, SQUARE=2};
+struct generator_params {
+	uint16_t amplitude;
+	uint16_t frequency;
+	enum generator_waveform waveform;
+};
 struct generator_params;
+
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
 extern struct generator_params g_Generator_parameters;
 extern const uint16_t FREQ_TO_COUNT_RATIO;
+
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/
