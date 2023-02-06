@@ -49,13 +49,26 @@ void Update_Graphics()
 void Update_Frequency()
 {
 
-	Current_Generator_parameters.frequency = g_Generator_parameters.frequency
+	Current_Generator_parameters.frequency = g_Generator_parameters.frequency;
 }
 
 void Update_Waveform()
 {
+	Current_Generator_parameters.waveform = g_Generator_parameters.waveform;
 
-	Current_Generator_parameters.waveform = g_Generator_parameters.waveform
+	switch (Current_Generator_parameters.waveform)
+	{
+	case SIN:
+		Draw_Sin();
+		break;
+	case TRIANGE:
+		Draw_Triangle();
+		break;
+	case SQUARE:
+		Draw_Square();
+	}
+}
+
 void Draw_Sin()
 {
 	ssd1306_DrawArc(82, 32, 15, 90, 270, Black);
