@@ -22,6 +22,7 @@
 #include "gpio.h"
 
 /* USER CODE BEGIN 0 */
+#include "tim.h"
 
 /* USER CODE END 0 */
 
@@ -79,15 +80,19 @@ void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 2 */
+volatile unsigned int Button_pressed = 0;
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	if (GPIO_Pin == SW2_Pin)
 	{
-		Generator_Next_Mode();
+		Button_pressed = 2;
 	}
 	else if (GPIO_Pin == SW1_Pin)
 	{
-		Set_Previous_Mode();
+		Button_pressed = 1;
 	}
+
+	  HAL_TIM_Base_Start_IT(&htim17);
 }
 /* USER CODE END 2 */
