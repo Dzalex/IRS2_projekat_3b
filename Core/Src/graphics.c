@@ -4,6 +4,8 @@
  *  Created on: Feb 5, 2023
  *      Author: milos
  */
+#include <stdlib.h>
+#include <string.h>
 
 #include "graphics.h"
 #include "main.h"
@@ -13,6 +15,8 @@
 #define WAVEFORM_Y 0
 
 struct generator_params Current_Generator_parameters;
+char frequency_string[] = "0000";
+char clear_string[] = "      ";
 
 void Init_Graphics()
 {
@@ -21,10 +25,9 @@ void Init_Graphics()
 	ssd1306_Fill(White);
 	ssd1306_SetCursor(2,0);
 	ssd1306_WriteString("Freq: ", Font_11x18, Black);
-	ssd1306_SetCursor(2, 18);
-	ssd1306_WriteString("9999Hz ", Font_11x18, Black);
 
 	Draw_Sin();
+	Update_Frequency();
 
 	ssd1306_UpdateScreen();
 
@@ -50,6 +53,13 @@ void Update_Frequency()
 {
 
 	Current_Generator_parameters.frequency = g_Generator_parameters.frequency;
+	ssd1306_SetCursor(2, 18);
+	ssd1306_WriteString(clear_string, Font_11x18, Black);
+
+	itoa(Current_Generator_parameters.frequency, frequency_string, 10);
+	ssd1306_SetCursor(2, 18);
+	ssd1306_WriteString(frequency_string, Font_11x18, Black);
+	ssd1306_WriteString("Hz", Font_11x18, Black);
 }
 
 void Update_Waveform()
