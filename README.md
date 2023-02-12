@@ -26,4 +26,15 @@
  ### I2C
  Za komunikaciju sa OLED disiplejem koristi se I2C 2 koji radi u standardnom modu na 100kHz. Implementacija drivera za ovaj displej je u sklopu Submodula stm32-ssd1306.
  
+ ## Testiranje
+ Izlaz genratora je priključen na osciloskop i podešena frekvencija je 1kHz. Rezultati su sledeći: \
+ 
+ *Sinusoida:*\
+ ![Sinusoida](https://github.com/Dzalex/IRS2_projekat_3b/blob/main/testing/sine.png)
+ 
+ *Pravougaoni:*\
+ ![Pravougaoni](https://github.com/Dzalex/IRS2_projekat_3b/blob/main/testing/square.png)
+ 
+ *Trougao:*\
+ ![Trougao](https://github.com/Dzalex/IRS2_projekat_3b/blob/main/testing/triangle.png)
  
