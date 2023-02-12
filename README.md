@@ -7,7 +7,7 @@
  # Izveštaj
  ## Uputstvo za upotrebu
  Način upravljanja generatorom je implementiran putem tastera SW1 i SW2 i potenciometra POT1. Informacije o trenutnom statusu generatora je moguće proveriti na OLED displeju. Levi deo displeja prikazuje trenutnu frekvenciju u obliku "Freq:", pa vrednost frekvencije u Hercima. Desni deo displeja prikazuje koji talas je trenutno na izlazu generatora. Izlaz generatora je na PA4. Da bi se promenila frekvecija generisanog signala koristi potenciometar POT1, a da bi se promenio talasni signal koristiti tastere SW1 i SW2. \
-**Da bi se uradio inicjalno clone repo-a koristiti sledeću komandu:**
+**Da bi se uradio inicjalni clone repo-a koristiti sledeću komandu:**
 ```
 git clone --recurse-submodules https://github.com/Dzalex/IRS2_projekat_3b.git
 ```
@@ -31,7 +31,7 @@ git clone --recurse-submodules https://github.com/Dzalex/IRS2_projekat_3b.git
  Za komunikaciju sa OLED disiplejem koristi se I2C 2 koji radi u standardnom modu na 100kHz. Implementacija drivera za ovaj displej je u sklopu Submodula stm32-ssd1306.
  
  ## Testiranje
- Izlaz genratora je priključen na osciloskop i podešena frekvencija je 1kHz. Rezultati su sledeći: \
+ Izlaz genratora je priključen na osciloskop i podešena frekvencija je 1kHz. Rezultati su sledeći: 
  
  *Sinusoida:*\
  ![Sinusoida](https://github.com/Dzalex/IRS2_projekat_3b/blob/main/testing/sine.png)
