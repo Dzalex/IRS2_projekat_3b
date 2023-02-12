@@ -5,6 +5,9 @@
  - DAC, DMA, generator standardnih talasnih oblika čiji parametri se zadaju preko potenciometara ili tastera. OLED opciono za neki prikaz(loopback adc očitavanje i prikaz).
  
  # Izveštaj
+ ## Uputstvo za upotrebu
+ Način upravljanja generatorom je implementiran putem tastera SW1 i SW2 i potenciometra POT1. Informacije o trenutnom statusu generatora je moguće proveriti na OLED displeju. Levi deo displeja prikazuje trenutnu frekvenciju u obliku "Freq:", pa vrednost frekvencije u Hercima. Desni deo displeja prikazuje koji talas je trenutno na izlazu generatora. Izlaz generatora je na PA4. Da bi se promenila frekvecija generisanog signala koristi potenciometar POT1, a da bi se promenio talasni signal koristiti tastere SW1 i SW2.
+ 
  ### DAC i DMA
  Kako bi se ispunio glavni zahtev projekta, tj. generisanje talasnih oblika, potrebno je konfigurisati i koristiti DAC, a transfer podataka iz memorije ka konvertoru treba realizovati pomoću DMA. Da bi se to uradilo potrebno je u memoriji odvojiti prostor za odbirke koji će biti preneti konvertoru i ovo je obavljeno u fajlu lookup_table.h. Podešavanje DAC-a je takvo da on radi u Normal Mode-u, i Trriger mu je Out event Timer-a 6. DMA je podešen tako da cirkularno prosleđuje odbirke iz table kada su potrebni periferiji. DAC se pokreće funkcijom `HAL_DAC_Start_DMA()`, kako bi se prenos desio pomoću DMA.
  
