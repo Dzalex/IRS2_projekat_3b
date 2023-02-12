@@ -38,3 +38,7 @@
  *Trougao:*\
  ![Trougao](https://github.com/Dzalex/IRS2_projekat_3b/blob/main/testing/triangle.png)
  
+ ### Komentari
+ - Planirano je porešavanje nivoa izlaznog signala, pomoću potenciometra POT2, ali nažalost nije došlo do ove implementacije jer bi bilo teško efikasno koristiti DMA u tom slučaju. Struktura koja podešava generator kao i prostor na displeju su odvojeni za parametar nivoa. Ovo bi bilo moguće implemetirati dodatnim spoljašnjim atenuatorom/pojačavačem.
+ - Moguće uspavljivanje procesora, tokom main-a. To nisam omogućio jer nisam testirao generator kada se to uradi.
+ 
