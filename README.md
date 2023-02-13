@@ -6,7 +6,7 @@
  
  # Izveštaj
  ## Uputstvo za upotrebu
- Način upravljanja generatorom je implementiran putem tastera SW1 i SW2 i potenciometra POT1. Informacije o trenutnom statusu generatora je moguće proveriti na OLED displeju. Levi deo displeja prikazuje trenutnu frekvenciju u obliku "Freq:", pa vrednost frekvencije u Hercima. Desni deo displeja prikazuje koji talas je trenutno na izlazu generatora. Izlaz generatora je na PA4. Da bi se promenila frekvecija generisanog signala koristi potenciometar POT1, a da bi se promenio talasni signal koristiti tastere SW1 i SW2. \
+ Način upravljanja generatorom je implementiran putem tastera SW1 i SW2 i potenciometra POT1. Informacije o trenutnom statusu generatora je moguće proveriti na OLED displeju. Levi deo displeja prikazuje trenutnu frekvenciju u obliku "Freq:", pa vrednost frekvencije u Hercima. Desni deo displeja prikazuje koji talas je trenutno na izlazu generatora. Izlaz generatora je na PA4. Da bi se promenila frekvecija generisanog signala koristiti potenciometar POT1, a da bi se promenio talasni signal koristiti tastere SW1 i SW2. \
 **Da bi se uradio inicjalni clone repo-a koristiti sledeću komandu:**
 ```
 git clone --recurse-submodules https://github.com/Dzalex/IRS2_projekat_3b.git
@@ -43,6 +43,6 @@ git clone --recurse-submodules https://github.com/Dzalex/IRS2_projekat_3b.git
  ![Trougao](https://github.com/Dzalex/IRS2_projekat_3b/blob/main/testing/triangle.png)
  
  ### Komentari
- - Planirano je porešavanje nivoa izlaznog signala, pomoću potenciometra POT2, ali nažalost nije došlo do ove implementacije jer bi bilo teško efikasno koristiti DMA u tom slučaju. Struktura koja podešava generator kao i prostor na displeju su odvojeni za parametar nivoa. Ovo bi bilo moguće implemetirati dodatnim spoljašnjim atenuatorom/pojačavačem.
+ - Planirano je podešavanje nivoa izlaznog signala, pomoću potenciometra POT2, ali nažalost nije došlo do ove implementacije jer bi bilo teško efikasno koristiti DMA u tom slučaju. Struktura koja podešava generator kao i prostor na displeju su odvojeni za parametar nivoa. Ovo bi bilo moguće implemetirati dodatnim spoljašnjim atenuatorom/pojačavačem.
  - Moguće uspavljivanje procesora, tokom main-a. To nisam omogućio jer nisam testirao generator kada se to uradi.
  
