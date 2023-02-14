@@ -22,7 +22,7 @@ git clone --recurse-submodules https://github.com/Dzalex/IRS2_projekat_3b.git
  #### TIM6
  Ovaj tajmer je već spomenut i koristi se kao vremenska osnova za generisanje signala. Vrednost koja je podešena u njegovom Counter Period registru direktno određuje frekvenciju izlaznog signala. TIM6 je podešen tako da ima fiksan Prescaler od 9, a u softveru je moguće promeniti vrednost Counter Period-a. Podešen mu je trigger Event, tako da pri isteku DAC je obavešten da može započeti sledeću konverziju. Promena frekvencije u softweru se dešava u sklopu funkcije `Set_Generator_Frequency()`.
  #### TIM17
- Da bi se izvršilo debounsiranje dva tastera (SW1 i SW2) potrebno je posle inicijalnog pritiska na neki, naknadno proveriti njihov status i samo jednom aktivirati željenu proceduru (u ovom slučaju promenu moda, waveforma, generatora - `Set_Generator_Mode()`) i vreme čekanja je 70ms. 
+ Da bi se izvršilo debounsiranje dva tastera (SW1 i SW2) potrebno je posle inicijalnog pritiska na neki, naknadno proveriti njihov status i samo jednom aktivirati željenu proceduru (u ovom slučaju promenu moda, waveforma, generatora - `Set_Generator_Mode()`) i vreme čekanja je 90ms. 
  
  ### ADC
  Da bi se podesila frekvencija izlaznog signala korisit se potenciometar POT1, koji je povezan na ADC1, ulaz 6. Kada se konverzija obavi, poziva se prekidna rutina u sklopu koje se podešava nova frekvencija.
